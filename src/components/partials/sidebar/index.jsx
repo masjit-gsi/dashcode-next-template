@@ -21,7 +21,7 @@ const Sidebar = () => {
         setScroll(false);
       }
     };
-    scrollableNodeRef.current.addEventListener("scroll", handleScroll);
+    // scrollableNodeRef.current.addEventListener("scroll", handleScroll);
   }, [scrollableNodeRef]);
 
   const [collapsed, setMenuCollapsed] = useSidebar();
@@ -58,10 +58,14 @@ const Sidebar = () => {
           }`}
         ></div>
 
-        <SimpleBar
+        {/* <SimpleBar
           className="sidebar-menu px-4 h-[calc(100%-80px)]"
           scrollableNodeProps={{ ref: scrollableNodeRef }}
-          >
+          > */}
+
+        <div
+           className="sidebar-menu px-4 h-[calc(100%-80px)]"
+        >
           {/* style={{overflow:'scroll !important'}} */}
           <Navmenu menus={menuItems} />
           {!collapsed && (
@@ -84,7 +88,8 @@ const Sidebar = () => {
               </div>
             </div>
           )}
-        </SimpleBar>
+          </div>
+        {/* </SimpleBar> */}
       </div>
     </div>
   );
